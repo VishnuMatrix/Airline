@@ -1,0 +1,245 @@
+/* --- PREVIOUS FOOTER STYLES --- */
+.site-footer {
+  width: 100%;
+}
+
+.footer-breadcrumb {
+  background-color: #333;
+  color: #ccc;
+  padding: 15px 0;
+}
+
+.breadcrumb-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-size: 0.8rem;
+}
+
+.footer-links-container {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.link-column h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.link-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-column li {
+  margin-bottom: 10px;
+}
+
+.link-column a {
+  color: #ccc;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.link-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-divider {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+/* --- UPDATED STYLES FOR EXTRA SECTIONS --- */
+.footer-extra-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ccc;
+}
+
+.extra-column h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.extra-column p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.unsubscribe-link {
+  font-size: 0.9rem;
+  color: #ccc;
+  text-decoration: underline;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.subscribe-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #888;
+  background-color: #fff;
+  color: #333;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.subscribe-form button {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #ccc;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: #444;
+}
+
+.privacy-info {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 15px;
+}
+.privacy-info a {
+  text-decoration: underline;
+  color: #888;
+}
+
+.app-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.app-badge {
+  /* This is a placeholder for the actual badge image */
+  border: 1px solid #555;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: #ccc;
+  text-decoration: none;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px; /* Changed from 50% for squares */
+  text-decoration: none;
+  font-style: italic;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+.social-icon:hover {
+  background-color: #333;
+}
+
+.footer-legal {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.legal-links a {
+  font-size: 0.8rem;
+  color: #ccc;
+  text-decoration: none;
+}
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo-box {
+  width: 100px;
+  height: 50px;
+  background-color: var(--emirates-red);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.footer-copyright {
+  max-width: 1200px;
+  margin: 20px auto 0 auto;
+  text-align: left;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) {
+  .footer-links-grid,
+  .footer-extra-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-extra-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-legal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

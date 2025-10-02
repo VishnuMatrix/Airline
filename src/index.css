@@ -1,0 +1,33 @@
+/* src/index.css */
+:root {
+  --color-background: #111111; /* A deep, off-black */
+  --color-primary-text: #f0f0f0; /* A soft, off-white */
+  --color-secondary-text: #888888; /* Muted grey for descriptions */
+  --color-accent: #e0b86b; /* A rich, warm gold */
+  --color-accent-dark: #c9a259;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+/* ... the rest of your file stays the same */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-primary-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-primary-text);
+  text-decoration: none;
+}

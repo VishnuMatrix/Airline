@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap");
+
+/* src/App.css */
+
+:root {
+  --primary-font: "Roboto", sans-serif;
+  --heading-font: "Playfair Display", serif;
+  --page-bg: #2d2d2d;
+  --card-bg: rgba(
+    0,
+    0,
+    0,
+    0.75
+  ); /* Slightly more opaque for better readability */
+  --accent-color: #3a86ff;
+  --text-color: #f0f0f0;
+  --light-text-color: #b0b0b0;
+  --input-bg: #ffffff;
+  --input-text: #333;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font);
+  background-color: var(--page-bg);
+  color: var(--text-color);
+}
+
+.app-container {
+  position: relative; /* Crucial for layering */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hides parts of the image that move outside the screen */
+}
+
+/* --- Styles for the animated background --- */
+.animated-background {
+  position: absolute;
+  top: -5%; /* Start slightly zoomed in */
+  left: -5%;
+  width: 110%; /* Cover the entire area even when zoomed */
+  height: 110%;
+  z-index: 1; /* Places it behind the content */
+
+  /* Replace with your desired background image */
+  background-image: url("https://images.unsplash.com/photo-1544641399-23cdd2d398f7?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+
+  /* Apply the animation */
+  animation: slow-pan 45s linear infinite alternate;
+}
+
+/* --- Keyframe animation for the background --- */
+@keyframes slow-pan {
+  0% {
+    transform: scale(1.05) translateX(-2%) translateY(-2%);
+  }
+  100% {
+    transform: scale(1.15) translateX(2%) translateY(2%);
+  }
+}
+
+/* --- Content must be on top of the background --- */
+.main-content {
+  text-align: center;
+  z-index: 10; /* Ensures this is on top of the .animated-background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  /* Add a subtle shadow to the text for better readability against the background */
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.page-header-text {
+  font-size: 1rem;
+  color: var(--text-color); /* Changed to a lighter color for better contrast */
+  margin-bottom: 20px;
+}
+/* Add these styles to your existing App.css */
+
+/* Destinations Section */
+.destinations-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+}
+
+.destinations-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.destinations-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* THIS IS THE KEY FIX - Grid Layout for Destination Cards */
+.destination-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .destination-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .destination-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .destinations-heading {
+    font-size: 2rem;
+  }
+
+  .destinations-section {
+    padding: 40px 20px;
+  }
+}

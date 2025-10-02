@@ -1,0 +1,73 @@
+/* src/components/DestinationCard/DestinationCard.css */
+
+.destination-card {
+  position: relative; /* Essential for positioning the overlay and text */
+  width: 350px;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden; /* Hides anything that spills out, like the zooming image */
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* The hover effect on the entire card */
+.destination-card:hover {
+  transform: scale(1.05); /* Scales the whole card up */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease; /* Slower transition for a smooth zoom */
+}
+
+/* The image zooms in when the card is hovered */
+.destination-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%; /* Covers the bottom 70% of the card */
+  /* This gradient is the key to readable text on any image */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, transparent);
+  transition: background 0.4s ease;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  width: 100%;
+  color: var(--color-primary-text);
+  z-index: 2; /* Ensures text is on top of the overlay */
+}
+
+.card-name {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin: 0 0 5px 0;
+}
+
+/* The description is hidden by default */
+.card-description {
+  font-family: var(--font-body);
+  color: var(--color-secondary-text);
+  margin: 0;
+  opacity: 0; /* Hidden */
+  max-height: 0; /* Collapsed */
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* On hover, the description fades and slides in */
+.destination-card:hover .card-description {
+  opacity: 1;
+  max-height: 100px; /* Expands to reveal text */
+}
